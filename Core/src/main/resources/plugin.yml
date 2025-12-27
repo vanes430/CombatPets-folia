@@ -1,5 +1,6 @@
 main: su.nightexpress.combatpets.PetsPlugin
 name: CombatPets
+folia-supported: true
 version: '${project.version}'
 author: NightExpress
 description: Customizable pets with many cool features!

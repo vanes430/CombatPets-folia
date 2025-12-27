@@ -681,7 +681,7 @@ public class PetManager extends AbstractManager<PetsPlugin> {
 
         Lang.PET_RENAME_PROMPT.getMessage().send(player);
         Dialog.create(player, (dialog, input) -> {
-            this.plugin.runTask(task -> {
+            this.plugin.runFoliaTask(() -> {
                 if (!this.tryRename(player, input.getText()) && nametagRequired) {
                     Players.addItem(player, new ItemStack(Material.NAME_TAG));
                 }

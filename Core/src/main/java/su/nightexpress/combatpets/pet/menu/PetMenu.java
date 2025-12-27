@@ -50,7 +50,7 @@ public class PetMenu extends ConfigMenu<PetsPlugin> {
         
         this.addHandler(this.despawnHandler = new ItemHandler("pet_return", (viewer, event) -> {
             plugin.getPetManager().despawnPet(viewer.getPlayer());
-            plugin.runTask(task -> viewer.getPlayer().closeInventory());
+            plugin.runFoliaTask(() -> viewer.getPlayer().closeInventory());
         }));
 
         this.addHandler(this.renameHandler = new ItemHandler("pet_rename", (viewer, event) -> {

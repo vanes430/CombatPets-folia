@@ -41,7 +41,7 @@ public class CombatListener extends AbstractListener<PetsPlugin> {
 
         activePet.onIncomingDamage();
 
-        this.plugin.runTask(task -> {
+        this.plugin.runFoliaTask(() -> {
             activePet.updateName();
             activePet.updateHealthBar();
         });

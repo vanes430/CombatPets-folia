@@ -84,11 +84,11 @@ public class PlayerGenericListener extends AbstractListener<PetsPlugin> {
 
         if (from.getWorld() != to.getWorld()) {
             this.petManager.removePet(activePet);
-            this.plugin.runTask(task -> this.petManager.spawnPet(player, activePet.getTier(), activePet.getTemplate()));
+            this.plugin.runFoliaTask(() -> this.petManager.spawnPet(player, activePet.getTier(), activePet.getTemplate()));
             return;
         }
 
-        this.plugin.runTaskLater(task -> activePet.moveToOwner(), 5L);
+        this.plugin.runFoliaTaskLater(() -> activePet.moveToOwner(), 5L);
     }
 
     @EventHandler(priority = EventPriority.MONITOR)
