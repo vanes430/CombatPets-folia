@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Clean up old libs
+rm -rf libs
+
 # Create libs directory
 mkdir -p libs
 
