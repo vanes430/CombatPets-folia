@@ -32,6 +32,16 @@
 
     <repositories>
         <repository>
+            <id>elmakers</id>
+            <url>https://maven.elmakers.com/repository</url>
+        </repository>
+
+        <repository>
+            <id>loohpjames</id>
+            <url>https://repo.loohpjames.com/repository</url>
+        </repository>
+
+        <repository>
             <id>nightexpress</id>
             <url>https://repo.nightexpressdev.com/releases</url>
         </repository>
@@ -53,7 +63,7 @@
         <dependency>
             <groupId>su.nightexpress.nightcore</groupId>
             <artifactId>main</artifactId>
-            <version>2.7.12</version>
+            <version>2.7.15</version>
         </dependency>
     </dependencies>
 </project>

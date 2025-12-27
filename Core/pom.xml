@@ -19,6 +19,12 @@
 
     <repositories>
         <repository>
+            <id>magmaguy-repo-releases</id>
+            <name>MagmaGuy's Repository</name>
+            <url>https://repo.magmaguy.com/releases</url>
+        </repository>
+
+        <repository>
             <id>papermc</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
@@ -32,13 +38,23 @@
         </repository>
 
         <repository>
-            <id>lumine-snapshot</id>
-            <url>http://mvn.lumine.io/repository/maven-snapshots/</url>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
 
         <repository>
-            <id>placeholderapi</id>
-            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+            <id>phoenix616</id>
+            <url>https://repo.phoenix616.dev/</url>
+        </repository>
+
+        <repository>
+            <id>Central Sonatype</id>
+            <url>https://central.sonatype.com/</url>
+        </repository>
+
+        <repository>
+            <id>redempt</id>
+            <url>https://redempt.dev</url>
         </repository>
     </repositories>
 
@@ -82,27 +98,34 @@
         <dependency>
             <groupId>su.nightexpress.economybridge</groupId>
             <artifactId>economy-bridge</artifactId>
-            <version>1.2.0</version>
+            <version>1.2.1</version>
         </dependency>
 
         <dependency>
-            <groupId>com.magmaguy.freeminecraftmodels</groupId>
+            <groupId>com.magmaguy</groupId>
             <artifactId>FreeMinecraftModels</artifactId>
-            <version>1.1.2</version>
+            <version>2.3.15</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>io.lumine</groupId>
             <artifactId>Mythic-Dist</artifactId>
-            <version>5.0.1-SNAPSHOT</version>
+            <version>5.0.5</version>
             <scope>provided</scope>
         </dependency>
 
-        <!-- broken repo, i dont care, will use local jar -->
         <dependency>
-            <groupId>io.github.arcaneplugins.levelledmobs</groupId>
-            <artifactId>LevelledMobs</artifactId>
-            <version>4.1.1</version>
+            <groupId>io.github.arcaneplugins</groupId>
+            <artifactId>levelledmobs-plugin</artifactId>
+            <version>4.0.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nomaven</groupId>
+            <artifactId>CommandAPI</artifactId>
+            <version>10.1.0-mod</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
