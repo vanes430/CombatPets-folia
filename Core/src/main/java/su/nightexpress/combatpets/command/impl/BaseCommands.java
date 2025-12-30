@@ -244,7 +244,10 @@ public class BaseCommands {
         }
 
         Template template = arguments.getArgument(CommandArguments.PET, Template.class);
-        plugin.runTaskAtPlayer(player, () -> Players.addItem(player, itemStack));
+        plugin.runTaskAtPlayer(player, () -> {
+            ItemStack itemStack = plugin.getItemManager().createMysteryEgg(template);
+            Players.addItem(player, itemStack);
+        });
 
         context.send(Lang.COMMAND_MYSTERY_EGG_DONE, replacer -> replacer
             .replace(Placeholders.PLAYER_NAME, player.getName())
