@@ -75,7 +75,7 @@ public class PetMenu extends ConfigMenu<PetsPlugin> {
 
             if (event.isLeftClick()) {
                 petHolder.setEquipmentUnlocked(!petHolder.isEquipmentUnlocked());
-                this.runNextTick(() -> this.flush(viewer));
+                this.plugin.runTaskAtPlayer(viewer.getPlayer(), () -> this.flush(viewer));
             }
             else if (event.isRightClick()) {
                 LivingEntity entity = petHolder.getEntity();
@@ -107,7 +107,7 @@ public class PetMenu extends ConfigMenu<PetsPlugin> {
             if (petHolder == null) return;
 
             petHolder.toggleCombatMode();
-            this.runNextTick(() -> this.flush(viewer));
+            this.plugin.runTaskAtPlayer(viewer.getPlayer(), () -> this.flush(viewer));
         }));
 
 
@@ -116,7 +116,7 @@ public class PetMenu extends ConfigMenu<PetsPlugin> {
             if (petHolder == null) return;
 
             petHolder.setSilent(!petHolder.isSilent());
-            this.runNextTick(() -> this.flush(viewer));
+            this.plugin.runTaskAtPlayer(viewer.getPlayer(), () -> this.flush(viewer));
         }));
 
 

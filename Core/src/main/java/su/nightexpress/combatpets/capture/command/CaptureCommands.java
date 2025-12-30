@@ -52,7 +52,7 @@ public class CaptureCommands {
         if (amount == 0) return false;
 
         ItemStack captureItem = manager.createCaptureItem();
-        Players.addItem(player, captureItem, amount);
+        plugin.runTaskAtPlayer(player, () -> Players.addItem(player, captureItem, amount));
 
         context.send(Lang.COMMAND_CATCH_ITEM_DONE, replacer -> replacer
             .replace(Placeholders.GENERIC_AMOUNT, NumberUtil.format(amount))

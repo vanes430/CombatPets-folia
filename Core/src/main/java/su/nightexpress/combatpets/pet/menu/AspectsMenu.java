@@ -66,7 +66,7 @@ public class AspectsMenu extends ConfigMenu<PetsPlugin> implements AutoFilled<As
             petHolder.reallocateAspects();
             petHolder.update();
 
-            this.runNextTick(() -> this.flush(viewer));
+            this.plugin.runTaskAtPlayer(viewer.getPlayer(), () -> this.flush(viewer));
         }));
 
         this.load();
@@ -166,7 +166,7 @@ public class AspectsMenu extends ConfigMenu<PetsPlugin> implements AutoFilled<As
             holder.setAspectPoints(holder.getAspectPoints() - 1);
 
             holder.update();
-            this.runNextTick(() -> this.flush(viewer));
+            this.plugin.runTaskAtPlayer(viewer.getPlayer(), () -> this.flush(viewer));
         });
     }
 

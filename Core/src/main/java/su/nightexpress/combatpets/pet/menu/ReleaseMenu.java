@@ -36,7 +36,7 @@ public class ReleaseMenu extends ConfirmMenu {
     @Override
     protected void onConfirm(@NotNull MenuViewer viewer, @NotNull PetData petData) {
         this.plugin.getPetManager().releasePet(viewer.getPlayer(), petData);
-        this.runNextTick(() -> viewer.getPlayer().closeInventory());
+        this.plugin.runTaskAtPlayer(viewer.getPlayer(), () -> viewer.getPlayer().closeInventory());
     }
 
     @Override

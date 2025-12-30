@@ -142,7 +142,7 @@ public class CollectionMenu extends ConfigMenu<PetsPlugin> implements AutoFilled
                 if (holder != null) {
                     this.plugin.getPetManager().despawnPet(player);
                     if (holder.getTemplate() == petData.getTemplate()) {
-                        this.runNextTick(() -> this.flush(viewer));
+                        this.plugin.runTaskAtPlayer(viewer.getPlayer(), () -> this.flush(viewer));
                         return;
                     }
                 }

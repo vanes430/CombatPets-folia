@@ -227,7 +227,7 @@ public class BaseCommands {
         Tier tier = arguments.getArgument(CommandArguments.TIER, Tier.class);
         Template template = arguments.getArgument(CommandArguments.PET, Template.class);
 
-        Players.addItem(player, template.createEgg(tier));
+        plugin.runTaskAtPlayer(player, () -> Players.addItem(player, template.createEgg(tier)));
 
         context.send(Lang.COMMAND_EGG_DONE, replacer -> replacer
             .replace(Placeholders.PLAYER_NAME, player.getName())
@@ -244,8 +244,7 @@ public class BaseCommands {
         }
 
         Template template = arguments.getArgument(CommandArguments.PET, Template.class);
-        ItemStack itemStack = plugin.getItemManager().createMysteryEgg(template);
-        Players.addItem(player, itemStack);
+        plugin.runTaskAtPlayer(player, () -> Players.addItem(player, itemStack));
 
         context.send(Lang.COMMAND_MYSTERY_EGG_DONE, replacer -> replacer
             .replace(Placeholders.PLAYER_NAME, player.getName())
@@ -274,7 +273,7 @@ public class BaseCommands {
         ItemStack itemStack = foodItem.getItem();
         itemStack.setAmount(amount);
 
-        Players.addItem(player, itemStack);
+        plugin.runTaskAtPlayer(player, () -> Players.addItem(player, itemStack));
 
         context.send(Lang.COMMAND_FOOD_DONE, replacer -> replacer
             .replace(Placeholders.GENERIC_AMOUNT, NumberUtil.format(amount))

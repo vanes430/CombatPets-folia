@@ -75,7 +75,7 @@ public class WardrobeCommands {
 
         ItemStack itemStack = manager.getItem(variant, value);
         itemStack.setAmount(amount);
-        Players.addItem(player, itemStack);
+        plugin.runTaskAtPlayer(player, () -> Players.addItem(player, itemStack));
 
         Lang.COMMAND_ACCESSORY_DONE.getMessage()
             .replace(Placeholders.GENERIC_NAME, ItemUtil.getItemName(itemStack))
